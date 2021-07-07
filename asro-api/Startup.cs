@@ -1,4 +1,5 @@
 using asro_api.Data;
+using asro_api.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,6 +36,9 @@ namespace asro_api
 
             // Конфигурация DBContext в SQL
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
+
+            // Конфигурация Сервиса
+            services.AddTransient<thReports01Services>();
 
             services.AddSwaggerGen(c =>
             {
