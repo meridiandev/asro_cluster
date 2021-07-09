@@ -59,5 +59,15 @@ namespace asro_api.Data.Services
 
             return _thReports01;
         }
+
+        public void DeleteThReports_1ById(int thReports_1Id)
+        {
+            var _thReports01 = _context.thReports_1.FirstOrDefault(n => n.Id == thReports_1Id);
+            if(_thReports01 != null)
+            {
+                _context.thReports_1.Remove(_thReports01);
+                _context.SaveChanges();
+            }
+        }
     }
 }

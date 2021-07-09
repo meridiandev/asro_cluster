@@ -47,5 +47,12 @@ namespace asro_api.Controllers
             var updatethReports1 = _thReports01Services.UpdateThReports_1ById(id, thReports01);
             return Ok(updatethReports1);
         }
+
+        [HttpDelete("delete-report-1-by-id/{id}")]
+        public IActionResult DeleteThReports_1ById(int id)
+        {
+            _thReports01Services.DeleteThReports_1ById(id);
+            return Ok();
+        }
     }
 }
