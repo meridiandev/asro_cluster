@@ -40,5 +40,12 @@ namespace asro_api.Controllers
             _thReports01Services.AddthReports01(thReports01);
             return Ok();
         }
+
+        [HttpPut("update-report-1-by-id/{id}")]
+        public IActionResult UpdateThReports01ById(int id, [FromBody] thReports_01VM thReports01)
+        {
+            var updatethReports1 = _thReports01Services.UpdateThReports_1ById(id, thReports01);
+            return Ok(updatethReports1);
+        }
     }
 }
