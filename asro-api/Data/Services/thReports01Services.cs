@@ -34,5 +34,7 @@ namespace asro_api.Data.Services
             _context.thReports_1.Add(_thReports01);
             _context.SaveChanges();
         }
+        public List<thReports_1> GetAllReports01() => _context.thReports_1.ToList();
+        public thReports_1 GetThReports_1ById(int thReports_1Id) => _context.thReports_1.FirstOrDefault(n => n.Id == thReports_1Id);
     }
 }

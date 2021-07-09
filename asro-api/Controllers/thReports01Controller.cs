@@ -19,6 +19,20 @@ namespace asro_api.Controllers
             _thReports01Services = thReports01Services;
         }
 
+        [HttpGet("get-all-reports-1")]
+        public IActionResult GetAllReports01()
+        {
+            var AllthReports1 = _thReports01Services.GetAllReports01();
+            return Ok(AllthReports1);
+        }
+
+        [HttpGet("get-reports-1-by-id/{id}")]
+        public IActionResult GetThReports_1ById(int id)
+        {
+            var thReports1 = _thReports01Services.GetThReports_1ById(id);
+            return Ok(thReports1);
+        }
+
         [HttpPost("add-report-1")]
 
         public IActionResult AddThReports01([FromBody]thReports_01VM thReports01)
