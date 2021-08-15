@@ -14,6 +14,22 @@ namespace asro_api.Data
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<thReports_1_Teacher>()
+                .HasOne(b => b.thReports_1)
+                .WithMany(ba => ba.thReports_1_Teacher)
+                .HasForeignKey(bi => bi.thReports_1Id);
+            
+            modelBuilder.Entity<thReports_1_Teacher>()
+                .HasOne(b => b.Teacher)
+                .WithMany(ba => ba.thReports_1_Teacher)
+                .HasForeignKey(bi => bi.TeacherId);
+        }
+
         public DbSet<thReports_1> thReports_1 { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<thReports_1_Teacher> thReports_1_Teacher { get; set; }
+        public DbSet<Publisher> Publishers { get; set; }
     }
 }

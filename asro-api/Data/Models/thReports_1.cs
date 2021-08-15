@@ -19,5 +19,11 @@ namespace asro_api.Data.Models
         public string EventNumber { get; set; }
         public DateTime ReportTimeAddIs { get; set; }
         public bool IsLockReport { get; set; }
+
+        // Navigation
+        public int PublisherId { get; set; }
+        public Publisher Publisher { get; set; }
+        // Fluent API ?
+        public List<thReports_1_Teacher> thReports_1_Teacher { get; set; }
     }
 }
