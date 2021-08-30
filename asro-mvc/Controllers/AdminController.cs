@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace asro_mvc.Controllers
 {
-    public class AdminController1 : Controller
+    public class AdminController : Controller
     {
         // GET: AdminController1
         public ActionResult Index()

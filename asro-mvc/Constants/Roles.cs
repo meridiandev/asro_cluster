@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace asro_mvc.Models
+namespace asro_mvc.Constants
 {
-    public class RoleModels
+    public enum Roles
     {
-        public string RoleName { get; set; }
+        SuperAdmin,
+        Admin,
+        Basic
     }
 }
